@@ -3,38 +3,39 @@ import { View, Text, StyleSheet } from 'react-native'
 const Index = (): JSX.Element => {
   return (
     <View style={styles.container}>
-      <View>
-        <View>
-          <Text>Memo</Text>
-          <Text>Logout</Text>
+      
+      <View style = {styles.header}>
+        <View style={styles.headerInner}>
+          <Text style={styles.headerTitle}>Memo</Text>
+          <Text style={styles.headerRight}>Logout</Text>
         </View>
       </View>
       <View>
 
-        <View>
+        <View style={styles.memoListItem}>
           <View>
-            <Text>買い物リスト</Text>
-            <Text>2024年2月20日　19:41</Text>
+            <Text style={styles.memoListItemTitile}>買い物リスト</Text>
+            <Text style={styles.memoListItemDate}>2024年2月20日　19:41</Text>
           </View>
           <View>
             <Text>X</Text>
           </View>
         </View>
 
-        <View>
+        <View style={styles.memoListItem}>
           <View>
-            <Text>買い物リスト</Text>
-            <Text>2024年2月20日　19:41</Text>
+            <Text style={styles.memoListItemTitile}>買い物リスト</Text>
+            <Text style={styles.memoListItemDate}>2024年2月20日　19:41</Text>
           </View>
           <View>
             <Text>X</Text>
           </View>
         </View>
 
-        <View>
+        <View style={styles.memoListItem}>
           <View>
-            <Text>買い物リスト</Text>
-            <Text>2024年2月20日　19:41</Text>
+            <Text style={styles.memoListItemTitile}>買い物リスト</Text>
+            <Text style={styles.memoListItemDate}>2024年2月20日　19:41</Text>
           </View>
           <View>
             <Text>X</Text>
@@ -46,6 +47,7 @@ const Index = (): JSX.Element => {
       <View>
         <Text>+</Text>
       </View>
+
     </View>
   )
 }
@@ -53,8 +55,47 @@ const Index = (): JSX.Element => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
+    backgroundColor: '#ffffff'
+  },
+  header: {
+    backgroundColor: '#F09C4F',
+    height: 104,
+    justifyContent: 'flex-end'
+  },
+  headerInner: {
+    alignItems: 'center',
+  },
+  headerRight: {
+    position: 'absolute',
+    right: 16,
+    bottom: 16,
+    color: 'rgba(255,255,255,0.7)'
+  },
+  headerTitle: {
+    marginBottom: 16,
+    fontSize: 22,
+    lineHeight: 32,
+    fontWeight: 'bold',
+    color: '#ffffff'
+  },
+  memoListItem: {
+    backgroundColor: '#ffffff',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingVertical: 16,
+    paddingHorizontal: 19,
+    alignItems: 'center',
+    borderBottomWidth: 1,
+    borderColor: 'rgba(0,0,0,0.15)'
+  },
+  memoListItemTitile: {
+    fontSize: 16,
+    lineHeight: 32
+  },
+  memoListItemDate: {
+    fontSize: 12,
+    lineHeight: 16,
+    color: '#848484'
   }
 })
 
