@@ -10,7 +10,7 @@ const Edit = (): JSX.Element => {
     <KeyboardAvoidingView behavior='height' style={styles.container}>
       <Header />
       <View style={styles.inputContainer}>
-        <TextInput multiline style={styles.input} value='買い物リスト' />
+        <TextInput multiline style={styles.input} value='' />
       </View>
       <CircleButton>
         <Icon name='check' size={40} color='#ffffff'/>
