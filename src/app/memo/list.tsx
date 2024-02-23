@@ -1,15 +1,25 @@
-import { View, StyleSheet } from 'react-native'
-import Icon from '../../components/icon'
+import { View, Text, StyleSheet } from 'react-native'
+import { router, useNavigation } from 'expo-router'
+import { useEffect } from 'react'
 
-import Header from '../../components/Header'
+import Icon from '../../components/icon'
 import MemoListItem from '../../components/MemoListItem'
 import CircleButton from '../../components/CircleButton'
+import LogOutButton from '../../components/LogOutButton'
+
+const handlePress = (): void => {
+  router.push('/memo/create')
+}
 
 const Index = (): JSX.Element => {
+  const navigation = useNavigation()
+  useEffect(() => {
+    navigation.setOptions({
+      headerRight: () => { return <LogOutButton /> }
+    })
+  }, [])
   return (
     <View style={styles.container}>
-
-      <Header />
 
       <View>
         <MemoListItem />
@@ -17,7 +27,7 @@ const Index = (): JSX.Element => {
         <MemoListItem />
       </View>
 
-      <CircleButton>
+      <CircleButton onPress={handlePress}>
         <Icon name='plus' size={40} color='#ffffff'/>
       </CircleButton>
 
