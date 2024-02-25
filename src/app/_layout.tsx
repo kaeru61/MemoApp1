@@ -11,7 +11,7 @@ const Layout = (): JSX.Element => {
     headerTitleStyle: {
       fontSize: 22,
       fontWeight: 'bold'
-      }
+    }
   }}/>
 }
 
